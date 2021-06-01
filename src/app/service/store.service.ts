@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StoreService {
-  private firstNum = -5;
-  private secondNum = 10;
+  public firstNum = -5;
+  public secondNum = 10;
 
   public change() {
     StoreService.increase(this.firstNum);
