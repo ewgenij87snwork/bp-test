@@ -39,4 +39,12 @@ describe('FirstComponent', () => {
     const div = fixture.nativeElement.querySelectorAll('div.number')
     expect(div[0].innerText).toEqual('2')
   })
+
+  it('should return Border-Color -- Blue', () => {
+    expect(component.borderStyle(10)).toEqual('blue')
+  })
+
+  it('should return Border-Color -- Red', () => {
+    expect(component.borderStyle(-10)).toEqual('red')
+  })
 });

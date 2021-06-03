@@ -1,15 +1,32 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {SecondComponent} from "./components/second/second.component";
+import {Component} from "@angular/core";
+import {FirstComponent} from "./components/first/first.component";
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SecondComponent,
+        FirstComponent
       ],
     }).compileComponents();
   });
 
+  @Component({
+    selector: 'app-nav',
+    template: ''
+  })
+  class MockSecondComponent {
+  }
+  @Component({
+    selector: 'app-nav',
+    template: ''
+  })
+  class MockFirstComponent {
+  }
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -20,12 +37,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('bandapixels-sorokin');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('bandapixels-sorokin app is running!');
   });
 });
