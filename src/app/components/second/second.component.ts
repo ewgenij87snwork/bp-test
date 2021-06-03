@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {StoreService} from "../../service/store.service";
 import {Nums} from "../../service/types";
 import {interval} from "rxjs";
-import {switchMap, takeWhile} from "rxjs/internal/operators";
+import {switchMap, takeWhile} from "rxjs/operators";
 
 @Component({
   selector: 'app-second',

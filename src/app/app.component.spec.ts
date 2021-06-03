@@ -16,13 +16,13 @@ describe('AppComponent', () => {
   });
 
   @Component({
-    selector: 'app-nav',
+    selector: 'app-second',
     template: ''
   })
   class MockSecondComponent {
   }
   @Component({
-    selector: 'app-nav',
+    selector: 'app-first',
     template: ''
   })
   class MockFirstComponent {

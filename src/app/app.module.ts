@@ -2,17 +2,16 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {FirstComponent} from './components/first/first.component';
-import {SecondComponent} from './components/second/second.component';
 import {StoreService} from "./service/store.service";
+import {ConnectorModule} from "./components/connector.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FirstComponent,
-    SecondComponent
+    AppComponent
   ],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    ConnectorModule],
   providers: [StoreService],
   bootstrap: [AppComponent]
 })
