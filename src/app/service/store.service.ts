@@ -7,17 +7,14 @@ export class StoreService {
   public firstNum = -5;
   public secondNum = 10;
 
+
   public change() {
-    StoreService.increase(this.firstNum);
-    StoreService.decrease(this.secondNum);
-    StoreService.decrease(this.secondNum);
+    this.increase();
+    this.decrease();
+    this.decrease();
   }
 
-  private static increase(num) {
-   return ++num
-  }
+  public increase() { this.firstNum++ }
 
-  private static decrease(num) {
-    return num
-  }
+  private decrease() { return this.secondNum-- }
 }
