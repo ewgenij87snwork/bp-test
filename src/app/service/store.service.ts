@@ -1,21 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Nums} from "./types";
-import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class StoreService {
-  private nums: Nums = {
-    firstNum: -5,
-    secondNum: 10
-  }
+export class StoreService{
+  private nums: Nums;
+  initNums();
 
-  private nums$: BehaviorSubject<Nums> = new BehaviorSubject(this.nums);
-  currentNums = this.nums$.asObservable();
-
-  public changeNums(): void {
-    this.nums$.next(this.change());
+  public initNums() {
+    return this.nums = {
+      firstNum: -5,
+      secondNum: 10
+    }
   }
 
   public change(): Nums {
@@ -25,9 +22,6 @@ export class StoreService {
     return this.nums;
   }
 
-  public getNumsFromService(): Nums {
-    return this.nums;
-  }
   private increase() { this.nums.firstNum++ }
 
   private decrease() { return this.nums.secondNum-- }

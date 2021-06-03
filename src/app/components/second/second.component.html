@@ -1,4 +1,6 @@
 <app-first [nums]="nums"></app-first>
-<button (click)="onStartChange()">Start</button>
-<button (click)="stop = !stop">{{stop}}</button>
-<div>{{bla | async}}</div>
+<div class="buttons__wrap">
+  <button (click)="onStart()">Start</button>
+  <button (click)="stop = true">Stop</button>
+  <button (click)="onReset()">Reset</button>
+</div>
