@@ -1,8 +1,9 @@
 import {ComponentFixture, discardPeriodicTasks, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
-import { SecondComponent } from './second.component';
+import {SecondComponent} from './second.component';
 import {Nums} from "../../service/types";
 import {StoreService} from "../../service/store.service";
+import {FirstComponent} from "../first/first.component";
 
 const mockNums: Nums = {
   firstNum: -5,
@@ -24,9 +25,12 @@ describe('SecondComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SecondComponent ]
+
+      declarations: [
+        SecondComponent,
+        FirstComponent]
     })
-    .compileComponents();
+      .compileComponents();
     await TestBed.overrideProvider(StoreService, {useValue: storeServiceStub})
   });
 
