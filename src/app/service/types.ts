@@ -1,4 +1,4 @@
-export type Nums =  {
-  firstNum: number,
-  secondNum: number
-}
+export type Nums = {
+    firstNum: number,
+    secondNum: number
+};
