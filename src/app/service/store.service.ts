@@ -7,13 +7,22 @@ import {Nums} from './types';
 export class StoreService {
     private nums: Nums = this.initNums();
 
+    private static borderStyle(num): string {
+        if (num > 0) {
+            return 'blue';
+        } else if (num < 0) {
+            return 'red';
+        }
+    }
+
     public initNums(): Nums {
         return this.nums = {
             firstNum: -5,
-            secondNum: 10
+            firstNumBorder: StoreService.borderStyle(this.nums?.firstNum) || 'none',
+            secondNum: 10,
+            secondNumBorder: StoreService.borderStyle(this.nums?.secondNum) || 'none'
         };
     }
-
     public change(): Nums {
         this.increase();
         this.decrease();

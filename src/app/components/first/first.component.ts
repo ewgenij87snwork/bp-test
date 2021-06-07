@@ -8,12 +8,6 @@ import {Nums} from '../../service/types';
 })
 export class FirstComponent {
     @Input() nums: Nums = null;
-
-    public borderStyle(num): string {
-        if (num > 0) {
-            return 'blue';
-        } else if (num < 0) {
-            return 'red';
-        }
-    }
+    firstNumBorder = 'none';
+    secondNumBorder = 'none';
 }

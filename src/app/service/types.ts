@@ -1,4 +1,6 @@
 export type Nums = {
     firstNum: number,
-    secondNum: number
+    firstNumBorder: string,
+    secondNum: number,
+    secondNumBorder: string
 };
