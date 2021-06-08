@@ -12,19 +12,24 @@ export const change = createAction('[NUMS] change');
 export const increase = createAction('[NUMS] increase');
 export const decrease = createAction('[NUMS] decrease');
 export const reset = createAction('[NUMS] reset');
+export const stop = createAction('[NUMS] stop');
+export const start = createAction('[NUMS] start');
+
 
 export interface NumsState {
     firstNum: number;
     secondNum: number;
     firstNumBorder: string;
     secondNumBorder: string;
+    stop: boolean;
 }
 
 export const initialState: NumsState = {
     firstNum: -3,
     secondNum: 6,
     firstNumBorder: 'red',
-    secondNumBorder: 'blue'
+    secondNumBorder: 'blue',
+    stop: true
 };
 
 export const numsReducer = createReducer(
@@ -45,7 +50,15 @@ export const numsReducer = createReducer(
             secondNumBorder: borderStyle(newNumValue)
         };
     }),
-    on(reset, _ => initialState)
+    on(start, state => ({
+        ...state,
+        stop: false
+    })),
+    on(stop, state => ({
+        ...state,
+        stop: true
+    })),
+    on(reset, _ => initialState),
 );
 
 export const featureSelector = createFeatureSelector<NumsState>('nums');
