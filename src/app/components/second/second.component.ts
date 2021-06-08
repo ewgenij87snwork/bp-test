@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
-import {Nums} from '../../service/types';
 import {interval} from 'rxjs';
-import {map, takeWhile} from 'rxjs/operators';
+import {switchMap, takeWhile} from 'rxjs/operators';
 import {Store} from '@ngrx/store';
-import {decrease, increase} from '../../reducers/nums';
+import {decrease, firstNumSelector, increase, reset, secondNumSelector} from '../../reducers/nums';
 
 @Component({
     selector: 'app-second',
@@ -11,20 +10,21 @@ import {decrease, increase} from '../../reducers/nums';
     styleUrls: ['./second.component.scss']
 })
 export class SecondComponent {
-    nums: Nums = null;
     stop = false;
+
+    interval = interval(1000);
+    firstNum$ = this.store.select(firstNumSelector);
+    secondNum$ = this.store.select(secondNumSelector);
 
     constructor(private store: Store) {
     }
-
-    interval = interval(1000);
 
     onStart(): void {
         this.stop = false;
         this.interval
             .pipe(
                 takeWhile(() => !this.stop),
-                map(async () => {
+                switchMap(async () => {
                     this.store.dispatch(increase());
                     this.store.dispatch(decrease());
                     this.store.dispatch(decrease());
@@ -33,5 +33,6 @@ export class SecondComponent {
     }
 
     onReset(): void {
+        this.store.dispatch(reset());
     }
 }
