@@ -2,7 +2,15 @@ import {Component} from '@angular/core';
 import {interval} from 'rxjs';
 import {switchMap, takeWhile} from 'rxjs/operators';
 import {Store} from '@ngrx/store';
-import {decrease, firstNumSelector, increase, reset, secondNumSelector} from '../../reducers/nums';
+import {
+    decrease,
+    firstNumBorderSelector,
+    firstNumSelector,
+    increase,
+    reset,
+    secondNumBorderSelector,
+    secondNumSelector
+} from '../../reducers/nums';
 
 @Component({
     selector: 'app-second',
@@ -14,7 +22,9 @@ export class SecondComponent {
 
     interval = interval(1000);
     firstNum$ = this.store.select(firstNumSelector);
+    firstNumBorder$ = this.store.select(firstNumBorderSelector);
     secondNum$ = this.store.select(secondNumSelector);
+    secondNumBorder$ = this.store.select(secondNumBorderSelector);
 
     constructor(private store: Store) {
     }

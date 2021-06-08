@@ -1,26 +1,13 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
     selector: 'app-first',
     templateUrl: './first.component.html',
     styleUrls: ['./first.component.scss']
 })
-export class FirstComponent implements OnChanges {
+export class FirstComponent {
     @Input() firstNum: number;
+    @Input() firstNumBorder = 'none';
     @Input() secondNum: number;
-    firstNumBorder = 'none';
-    secondNumBorder = 'none';
-
-    ngOnChanges(): void {
-        this.firstNumBorder = this.borderStyle(this.firstNum);
-        this.secondNumBorder = this.borderStyle(this.secondNum);
-    }
-
-    borderStyle(num): string {
-        if (num > 0) {
-            return 'blue';
-        } else if (num < 0) {
-            return 'red';
-        }
-    }
+    @Input() secondNumBorder = 'none';
 }
