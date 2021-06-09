@@ -25,8 +25,8 @@ export interface NumsState {
 }
 
 export const initialState: NumsState = {
-    firstNum: -3,
-    secondNum: 6,
+    firstNum: -5,
+    secondNum: 10,
     firstNumBorder: 'red',
     secondNumBorder: 'blue',
     stop: true
