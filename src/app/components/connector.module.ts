@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {FirstComponent} from './first/first.component';
+import {SecondComponent} from './second/second.component';
 
 @NgModule({
   declarations: [

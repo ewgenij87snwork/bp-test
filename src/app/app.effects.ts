@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
-import { interval } from 'rxjs';
-import { map, switchMap, takeUntil } from 'rxjs/operators';
-import { decrease, increase, start, stop } from './reducers/nums';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {Store} from '@ngrx/store';
+import {interval} from 'rxjs';
+import {map, switchMap, takeUntil} from 'rxjs/operators';
+import {decrease, increase, start, stop} from './reducers/nums';
 
 @Injectable()
 export class AppEffects {
@@ -24,5 +24,5 @@ export class AppEffects {
         })
       ))
     ),
-    { dispatch: false });
+    {dispatch: false});
 }

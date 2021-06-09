@@ -1,7 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Nums } from '../../service/types';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {Nums} from '../../service/types';
 
-import { FirstComponent } from './first.component';
+import {FirstComponent} from './first.component';
 
 describe('FirstComponent', () => {
   let component: FirstComponent;
@@ -14,7 +14,7 @@ describe('FirstComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FirstComponent ]
+      declarations: [FirstComponent]
     })
                  .compileComponents();
   });

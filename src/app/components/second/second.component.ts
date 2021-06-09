@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import {Component} from '@angular/core';
+import {Store} from '@ngrx/store';
 import {
   firstNumBorderSelector,
   firstNumSelector,
@@ -13,7 +13,7 @@ import {
 @Component({
   selector: 'app-second',
   templateUrl: './second.component.html',
-  styleUrls: [ './second.component.scss' ]
+  styleUrls: ['./second.component.scss']
 })
 export class SecondComponent {
   firstNum$ = this.store.select(firstNumSelector);

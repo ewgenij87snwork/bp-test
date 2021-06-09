@@ -1,6 +1,6 @@
-import { ActionReducerMap, MetaReducer } from '@ngrx/store';
-import { environment } from '../../environments/environment';
-import { numsReducer, NumsState } from './nums';
+import {ActionReducerMap, MetaReducer} from '@ngrx/store';
+import {environment} from '../../environments/environment';
+import {numsReducer, NumsState} from './nums';
 
 export interface State {
   nums: NumsState;

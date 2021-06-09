@@ -1,4 +1,4 @@
-import { createAction, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
+import {createAction, createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
 
 const borderStyle = (num) => {
   if (num > 0) {
