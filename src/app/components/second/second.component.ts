@@ -1,37 +1,38 @@
-import {Component} from '@angular/core';
-import {Store} from '@ngrx/store';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import {
-    firstNumBorderSelector,
-    firstNumSelector,
-    stop,
-    reset,
-    secondNumBorderSelector,
-    secondNumSelector, start
+  firstNumBorderSelector,
+  firstNumSelector,
+  reset,
+  secondNumBorderSelector,
+  secondNumSelector,
+  start,
+  stop
 } from '../../reducers/nums';
 
 @Component({
-    selector: 'app-second',
-    templateUrl: './second.component.html',
-    styleUrls: ['./second.component.scss']
+  selector: 'app-second',
+  templateUrl: './second.component.html',
+  styleUrls: [ './second.component.scss' ]
 })
 export class SecondComponent {
-    firstNum$ = this.store.select(firstNumSelector);
-    firstNumBorder$ = this.store.select(firstNumBorderSelector);
-    secondNum$ = this.store.select(secondNumSelector);
-    secondNumBorder$ = this.store.select(secondNumBorderSelector);
+  firstNum$ = this.store.select(firstNumSelector);
+  firstNumBorder$ = this.store.select(firstNumBorderSelector);
+  secondNum$ = this.store.select(secondNumSelector);
+  secondNumBorder$ = this.store.select(secondNumBorderSelector);
 
-    constructor(private store: Store) {
-    }
+  constructor(private store: Store) {
+  }
 
-    onStart(): void {
-        this.store.dispatch(start());
-    }
+  onStart(): void {
+    this.store.dispatch(start());
+  }
 
-    onStop(): void {
-        this.store.dispatch(stop());
-    }
+  onStop(): void {
+    this.store.dispatch(stop());
+  }
 
-    onReset(): void {
-        this.store.dispatch(reset());
-    }
+  onReset(): void {
+    this.store.dispatch(reset());
+  }
 }
