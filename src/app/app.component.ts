@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Store} from '@ngrx/store';
 
 @Component({
     selector: 'app-root',
@@ -8,11 +7,4 @@ import {Store} from '@ngrx/store';
 })
 export class AppComponent {
     title = 'bandapixels-sorokin';
-    constructor(private store: Store) {
-        // @ts-ignore
-        if (window.Cypress) {
-            // @ts-ignore
-            window.store = store;
-        }
-    }
 }
