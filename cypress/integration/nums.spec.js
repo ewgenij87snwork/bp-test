@@ -55,4 +55,16 @@ context('Nums', () => {
         cy.get('.number:first').should('have.text', firstNumInitValue);
         cy.get('.number:last').should('have.text', secondNumInitValue);
     })
+
+    it('Border color turns blue when value of number greater then 0', () => {
+        cy.get('button').contains('Start').click()
+        cy.clock()
+        cy.wait(5000).get('.number:first').should('have.class', 'blue');
+    })
+
+    it('Border color turns red when value of number less then 0', () => {
+        cy.get('button').contains('Start').click()
+        cy.clock()
+        cy.wait(5000).get('.number:last').should('have.class', 'red');
+    })
 })
