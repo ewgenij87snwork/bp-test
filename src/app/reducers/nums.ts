@@ -1,10 +1,12 @@
 import {createAction, createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
 
-const borderStyle = (num) => {
+const borderStyle = (num: number): string => {
   if (num > 0) {
     return 'blue';
   } else if (num < 0) {
     return 'red';
+  } else {
+    return '';
   }
 };
 
