@@ -5,10 +5,8 @@ import {FirstComponent} from '../first/first.component';
 
 import {SecondComponent} from './second.component';
 
-const mockNums: Nums = {
-  firstNum: -5,
-  secondNum: 10
-};
+const firstNum = -5;
+const secondNum = 10;
 
 const storeServiceStub: Partial<StoreService> = {
   change(): Nums {

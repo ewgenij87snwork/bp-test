@@ -6,17 +6,6 @@ context('Nums', () => {
     cy.visit('/')
   })
 
-  it('Display initialised numbers with colored border', () => {
-    cy.get('.red').contains('-5')
-    cy.get('.blue').contains('10')
-  })
-
-  it('Display buttons: start, stop, reset', () => {
-    cy.get('button').contains('Start')
-    cy.get('button').contains('Stop')
-    cy.get('button').contains('Reset')
-  })
-
   it('On click "Start" the first number increase by 1 every 1 second', () => {
     cy.get('button').contains('Start').click()
     cy.clock()
@@ -39,7 +28,6 @@ context('Nums', () => {
     cy.get('button').contains('Start').click()
     cy.get('button').contains('Stop').click()
     cy.clock();
-    cy.tick(1000);
     cy.get('.number:first').should('have.text', firstNumInitValue);
     cy.get('.number:last').should('have.text', secondNumInitValue);
     cy.tick(1000);
@@ -59,12 +47,12 @@ context('Nums', () => {
   it('Border color turns blue when value of number greater then 0', () => {
     cy.get('button').contains('Start').click()
     cy.clock()
-    cy.wait(5000).get('.number:first').should('have.class', 'blue');
+    cy.wait(Math.abs(firstNumInitValue) * 1000).get('.number:first').should('have.class', 'blue');
   })
 
   it('Border color turns red when value of number less then 0', () => {
     cy.get('button').contains('Start').click()
     cy.clock()
-    cy.wait(5000).get('.number:last').should('have.class', 'red');
+    cy.wait(Math.abs(secondNumInitValue / 2) * 1000).get('.number:last').should('have.class', 'red');
   })
 })
