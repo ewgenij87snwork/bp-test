@@ -6,8 +6,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./first.component.scss']
 })
 export class FirstComponent {
-  @Input() firstNum: number;
+  @Input() firstNum = 0;
   @Input() firstNumBorder = 'none';
-  @Input() secondNum: number;
+  @Input() secondNum = 0;
   @Input() secondNumBorder = 'none';
 }

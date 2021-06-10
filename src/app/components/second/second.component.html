@@ -1,8 +1,8 @@
 <app-first
-  [firstNum]="firstNum$ | async"
-  [firstNumBorder]="firstNumBorder$ | async"
-  [secondNum]="secondNum$ | async"
-  [secondNumBorder]="secondNumBorder$ | async">
+  [firstNum]="(firstNum$ | async)!"
+  [firstNumBorder]="(firstNumBorder$ | async)!"
+  [secondNum]="(secondNum$ | async)!"
+  [secondNumBorder]="(secondNumBorder$ | async)!">
 </app-first>
 <div class="buttons__wrap">
   <button (click)="onStart()">Start</button>

@@ -16,7 +16,7 @@ import {
   styleUrls: ['./second.component.scss']
 })
 export class SecondComponent {
-  firstNum$ = this.store.select(firstNumSelector);
+  firstNum$ = this.store.select(firstNumSelector) || 1;
   firstNumBorder$ = this.store.select(firstNumBorderSelector);
   secondNum$ = this.store.select(secondNumSelector);
   secondNumBorder$ = this.store.select(secondNumBorderSelector);
