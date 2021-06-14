@@ -1,7 +1,7 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {NumsState} from './reducer';
+import * as fromNums from './reducer'
 
-export const featureSelector = createFeatureSelector<NumsState>('nums');
+export const featureSelector = createFeatureSelector<fromNums.NumsState>('nums');
 export const firstNumSelector = createSelector(
   featureSelector,
   state => state.firstNum

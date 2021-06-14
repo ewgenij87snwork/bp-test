@@ -6,7 +6,7 @@ export interface State {
   nums: NumsState;
 }
 
-export const reducers: ActionReducerMap<State> = {
+export const appReducers: ActionReducerMap<State> = {
   nums: numsReducer
 };
 

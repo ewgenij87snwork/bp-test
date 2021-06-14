@@ -16,15 +16,13 @@ export interface NumsState {
   secondNum: number;
   firstNumBorder: string;
   secondNumBorder: string;
-  stop: boolean;
 }
 
 export const initialState: NumsState = {
   firstNum: -5,
   secondNum: 10,
   firstNumBorder: 'red',
-  secondNumBorder: 'blue',
-  stop: true
+  secondNumBorder: 'blue'
 };
 
 export const numsReducer = createReducer(
@@ -45,13 +43,7 @@ export const numsReducer = createReducer(
       secondNumBorder: borderStyle(newNumValue)
     };
   }),
-  on(start, state => ({
-    ...state,
-    stop: false
-  })),
-  on(stop, state => ({
-    ...state,
-    stop: true
-  })),
+  on(start, state => ({...state})),
+  on(stop, state => ({...state})),
   on(reset, _ => initialState)
 );

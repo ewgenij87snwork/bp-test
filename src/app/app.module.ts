@@ -8,7 +8,7 @@ import {environment} from '../environments/environment';
 import {AppComponent} from './app.component';
 import {Effects} from './store/effects';
 import {ConnectorModule} from './components/connector.module';
-import {metaReducers, reducers} from './store';
+import {metaReducers, appReducers} from './store';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {metaReducers, reducers} from './store';
   imports: [
     BrowserModule,
     ConnectorModule,
-    StoreModule.forRoot(reducers, {
+    StoreModule.forRoot(appReducers, {
       metaReducers
     }),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
