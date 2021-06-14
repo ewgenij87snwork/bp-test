@@ -6,9 +6,9 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 
 import {AppComponent} from './app.component';
-import {AppEffects} from './app.effects';
+import {Effects} from './store/effects';
 import {ConnectorModule} from './components/connector.module';
-import {metaReducers, reducers} from './reducers';
+import {metaReducers, reducers} from './store';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import {metaReducers, reducers} from './reducers';
       metaReducers
     }),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    EffectsModule.forRoot([AppEffects])],
+    EffectsModule.forRoot([Effects])],
   bootstrap: [AppComponent]
 })
 export class AppModule {

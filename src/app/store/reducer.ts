@@ -1,4 +1,5 @@
-import {createAction, createFeatureSelector, createReducer, createSelector, on} from '@ngrx/store';
+import {createReducer, on} from '@ngrx/store';
+import {decrease, increase, reset, start, stop} from './actions';
 
 const borderStyle = (num: number): string => {
   if (num > 0) {
@@ -9,14 +10,6 @@ const borderStyle = (num: number): string => {
     return '';
   }
 };
-
-export const change = createAction('[NUMS] change');
-export const increase = createAction('[NUMS] increase');
-export const decrease = createAction('[NUMS] decrease');
-export const reset = createAction('[NUMS] reset');
-export const stop = createAction('[NUMS] stop');
-export const start = createAction('[NUMS] start');
-
 
 export interface NumsState {
   firstNum: number;
@@ -61,22 +54,4 @@ export const numsReducer = createReducer(
     stop: true
   })),
   on(reset, _ => initialState)
-);
-
-export const featureSelector = createFeatureSelector<NumsState>('nums');
-export const firstNumSelector = createSelector(
-  featureSelector,
-  state => state.firstNum
-);
-export const secondNumSelector = createSelector(
-  featureSelector,
-  state => state.secondNum
-);
-export const firstNumBorderSelector = createSelector(
-  featureSelector,
-  state => state.firstNumBorder
-);
-export const secondNumBorderSelector = createSelector(
-  featureSelector,
-  state => state.secondNumBorder
 );

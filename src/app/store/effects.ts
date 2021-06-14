@@ -3,10 +3,10 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import {interval} from 'rxjs';
 import {map, switchMap, takeUntil} from 'rxjs/operators';
-import {decrease, increase, start, stop} from './reducers/nums';
+import {decrease, increase, start, stop} from './actions';
 
 @Injectable()
-export class AppEffects {
+export class Effects {
   constructor(
     private actions$: Actions,
     private store: Store) {

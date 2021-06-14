@@ -1,14 +1,16 @@
 import {Component} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {
-  firstNumBorderSelector,
-  firstNumSelector,
   reset,
-  secondNumBorderSelector,
-  secondNumSelector,
   start,
   stop
-} from '../../reducers/nums';
+} from '../../store/actions';
+import {
+  firstNumBorderSelector,
+  firstNumSelector,
+  secondNumBorderSelector,
+  secondNumSelector
+} from '../../store/selectors';
 
 @Component({
   selector: 'app-second',
